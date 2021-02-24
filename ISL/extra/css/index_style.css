@@ -1,0 +1,91 @@
+body{
+  padding: 10px 20px 10px 20px;
+}
+img{
+  width: 130px;
+  height: 100px;
+}
+h1{
+  font-family:serif;
+  font-size: 20px;
+}
+.titleQ{
+  color: #e2be5f;
+}
+.se{
+  width: 1024px;
+}
+em{
+  font-family: 'Nothing You Could Do', cursive;
+}
+.middle{
+    background-color:#12296f;
+  }
+.heading{
+  text-align: center;
+  color: white;
+  position: absolute;
+  top:10px;
+  left: 35%;
+}
+.container-fluid {
+  position: relative;
+  background-color:#12296f;
+}
+.buton{
+  height: 50px;
+  position: absolute;
+  bottom: 6px;
+  color: white;
+  left: 45%;
+  background-color: #12296f;
+}
+.Body-section{
+display: inline-flex;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+.des{
+  text-align: center;
+}
+#left-as{
+  background-color: #e7e7de;
+  padding: 10px 15px 10px 15px;
+ }
+ #middle-as{
+   background-color: #e7e7de;
+   margin-left: 5%;
+   margin-right: 5%;
+  }
+ #right-as{
+   background-color: #e7e7de;
+   padding: 10px 15px 10px 15px;
+  }
+  .footTitle {
+    font-family: 'Nothing You Could Do', cursive;
+    text-transform:none;
+    font-weight:400;
+    color:black !important;
+    font-size: 2em !important;
+  }
+.foot-section{
+  position: relative;
+}
+#f1{
+  text-align: center;
+  position: absolute;
+  padding-top: 150px;
+  left: 5%;
+}
+#f2{
+  position: absolute;
+  padding-top: 150px;
+  right:43%
+}
+.madewithlove{
+  text-align: center;
+}
+.tophy{
+width: 1480px;
+height: 720px;
+}
