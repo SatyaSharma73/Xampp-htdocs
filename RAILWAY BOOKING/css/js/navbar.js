@@ -1,10 +1,3 @@
-window.alert("sometext");
-
-
-
-/* Please ❤ this if you like it! */
-
-
 (function($) { "use strict";
 
 	$(function() {
@@ -20,12 +13,6 @@ window.alert("sometext");
 		});
 	});
 
-	//Animation
-
-	$(document).ready(function() {
-		$('body.hero-anime').removeClass('hero-anime');
-	});
-
 	//Menu On Hover
 
 	$('body').on('mouseenter mouseleave','.nav-item',function(e){
@@ -36,9 +23,5 @@ window.alert("sometext");
 				},1);
 			}
 	});
-
-	//Switch light/dark
-
-
 
   })(jQuery);
