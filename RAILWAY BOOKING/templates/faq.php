@@ -14,9 +14,11 @@
 <style media="screen">
 body{
 padding: 50px;
-background-color: #dbf6e9;
-}
 
+}
+.faq-head{
+  text-align: center;
+}
 </style>
 <body>
 
@@ -26,7 +28,7 @@ background-color: #dbf6e9;
 <img src="http://indianrailways.gov.in/images/new.gif" alt=""> <a href="javascript:AlertIt();"> <strong> COVID19 Parcel Special Trains</strong></a>
 <img src="http://indianrailways.gov.in/images/new.gif" alt=""> <a href="http://www.parcel.indianrail.gov.in"> <strong> For Parcel Freight click here, then from Booking menu, click Online Parcel Booking</strong></a>
 </marquee>
-
+<hr>
 <article>
 <div class="main-page">
 <h2>Travellers often have a lot of questions about booking train tickets, train status and timings, cancellations, refund and more. Given below are answers to all questions related to Indian Railway Train Tickets.</h2>
@@ -34,7 +36,9 @@ background-color: #dbf6e9;
 <div class="main-page" >
 <div class="main-page" >
   <br>
-<h3>FAQs on Indian Railway Train Tickets:</h3>
+
+<h3 class="faq-head">FAQs on Indian Railway Train Tickets:</h3>
+<hr>
 <div class="faq-container faq-wrap" itemscope="" itemtype="http://schema.org/FAQPage">
 <div itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
 <p itemprop="name">

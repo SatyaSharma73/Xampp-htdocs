@@ -20,24 +20,24 @@
             <div class="col-12">
               <nav class="navbar navbar-expand-md navbar-light">
 
-                <img src="https://www.media4growth.com/images/news/2016-10-04/1475559740.jpg" class="logo" alt="" >
+                <img src="https://qph.fs.quoracdn.net/main-qimg-57719041b378a686aaf43bc29b9b94d9" class="logo" alt="" >
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                  <ul class="navbar-nav nav  ml-auto py-4 py-md-0">
-                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                      <a class="nav-link " href="templates/login.php">Login</a>
+                  <ul class="navbar-nav nav  ml-auto py-4 py-md-4">
+                    <li class="nav-item">
+                      <a class="nav-link " href="admin/admin_index.php">Login</a>
                     </li>
                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 ml-auto ">
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Booking</a>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="templates/booking_procedure.php">Booking Procedure</a>
+                        <a class="dropdown-item" href="templates/booking_procedure.php">Reservation Rules</a>
                         <a class="dropdown-item" href="#">Online Booking</a>
-                        <a class="dropdown-item" href="#">Download Forwarding Note</a>
-                        <a class="dropdown-item" href="#">Prohibited Items</a>
+                        <a class="dropdown-item" href="templates/reservation_fee.php">Reservation Fee</a>
+
                       </div>
                     </li>
 
