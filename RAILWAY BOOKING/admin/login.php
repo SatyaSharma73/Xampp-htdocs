@@ -1,12 +1,58 @@
 <?php
 include("connection2.php");
 
-if (isset($_POST['signup'])) {
+if (isset($_POST['Submit'])) {
 
-  $query="insert into admin set name='".$_POST['name']."',phone_number='".$_POST['phone']."',email='".$_POST['email']."',password='".$_POST['password']."' ";
-    mysqli_query($con,$query);
-    header("location:login.php");
-  }
+  $file = ""; // intialing file name as a blank
+									if(isset($_FILES['file'])) {
+										$folder = "user_profile";
+										//uploading
+										$file_exts = array("jpg", "JPG", "JPEG", "bmp", "jpeg", "gif", "png", "doc", "docx", "pdf");
+										$value = explode(".", $_FILES["file"]["name"]);
+										$upload_exts = end($value);
+										if ((($_FILES["file"]["type"] == "image/gif")
+										|| ($_FILES["file"]["type"] == "image/jpeg")
+										|| ($_FILES["file"]["type"] == "image/jpg")
+										|| ($_FILES["file"]["type"] == "image/JPG")
+										|| ($_FILES["file"]["type"] == "image/JPEG")
+										|| ($_FILES["file"]["type"] == "image/png")
+										|| ($_FILES["file"]["type"] == "image/pjpeg")
+										|| ($_FILES["file"]["type"] == "application/msword")
+										|| ($_FILES["file"]["type"] == "application/msword")
+										|| ($_FILES["file"]["type"] == "application/pdf"))
+										&& ($_FILES["file"]["size"] < 2000000000)
+										&& in_array($upload_exts, $file_exts))
+										{
+										if ($_FILES["file"]["error"] > 0)
+										{
+
+										}
+										else
+										{
+										// Enter your path to <span id="IL_AD5" class="IL_AD">upload file</span> here
+										if (file_exists("$folder/" .
+										$_FILES["file"]["name"]))
+										{
+										echo "<div class='error'>"."(".$_FILES["file"]["name"].")".
+										" already exists. "."</div>";
+										}
+										else
+										{
+											//randome name
+											 $ran = md5(time().rand()) ;
+											 $file = $ran.".".$upload_exts;
+										move_uploaded_file($_FILES["file"]["tmp_name"],
+										"$folder/".$file);
+										}
+										}
+										}
+											}
+
+
+$query="insert into admin set name='".$_POST['name']."',email='".$_POST['email']."',password='".$_POST['password']."' ,p_image='".$file."'";
+mysqli_query($con,$query);
+header("location:login.php");
+}
  ?>
 <!doctype html>
 <html lang="en">
@@ -33,11 +79,12 @@ if (isset($_POST['signup'])) {
 
   			<span>or use your email for registration</span>
   			<input type="text" name="name" value="" placeholder="Name">
-        <input type="text" name="phone" value="" placeholder="Phone Number">
         <input type="email" id="inputEmail" name="email" placeholder="Email" required autofocus>
-
         <input type="password" id="file" name="password" value=""  placeholder="Password" required autofocus>
-        <input type="submit" name="signup" value="Sign Up" class="butt">
+        <input type="file" name="file" value="" required="">
+
+        <input type="submit" name="Submit" value="Sign Up" class="butt">
+
 
   		</form>
   	</div>

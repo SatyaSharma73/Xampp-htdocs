@@ -1,5 +1,11 @@
 <?php
-include("connection.php");?>
+include("connection.php");
+
+$query="select p_image from admin where email='".$_SESSION['Email']."'";
+$result=mysqli_query($con,$query);
+
+
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,9 +16,11 @@ include("connection.php");?>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <title>Welcome to Indian Railway Passenger Reservation Enquiry</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/0af9610dbb.js"></script>
+    <title>Welcome to Indian Railway Passenger Reservation Enquiry </title>
   </head>
   <body>
 
@@ -23,29 +31,35 @@ include("connection.php");?>
       <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
           <div class="sidebar-brand">
-            <a href="login_do.php?logout=true">Logout</a>
+            <a href="login_do.php?logout=true"><i class="fa fa-sign-out" aria-hidden="true">Logout</i></a>
             <div id="close-sidebar">
-              <i class="fas fa-times"></i>
+
+
             </div>
           </div>
           <div class="sidebar-header">
             <div class="user-pic">
-              <img src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="">
+              <?php while($fetch=mysqli_fetch_object($result)){ ?>
+              <img src="user_profile/<?php echo $fetch->p_image;?>" alt="<?php echo $fetch->p_image;?>">
+              <?php } ?>
+              <!-- <img src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt=""> -->
             </div>
             <div class="user-info">
-              <span class="user-name">Jhon
-                <strong>Smith</strong>
+              <span class="user-name">
+                <?php  if (isset($_SESSION['NAME'])) { ?>
+                  <em><strong><?php echo $_SESSION['NAME']; ?></em></strong>
+                  <?php } ?>
               </span>
+
               <span class="user-role">Administrator</span>
               <span class="user-status">
                 <span>Online</span>
                 </span>
               <span class="user-status">
-                  <span><a href="#" class="user-status"> Edit profile</span><span class="badge badge-pill ">New</span>
+                  <span><a href="admin_templates\edit.php" class="user-status"> Edit profile</span>
               </span>
             </div>
           </div>
-
           <div class="sidebar-menu">
             <ul>
               <li class="header-menu">
@@ -53,6 +67,8 @@ include("connection.php");?>
               </li>
               <li class="sidebar-dropdown">
                 <a href="#">
+                  <i class="fa fa-tachometer" aria-hidden="true"></i>
+
                 <span>Dashboard</span>
                   <span class="badge 'badge-pill' ">New</span>
                 </a>
